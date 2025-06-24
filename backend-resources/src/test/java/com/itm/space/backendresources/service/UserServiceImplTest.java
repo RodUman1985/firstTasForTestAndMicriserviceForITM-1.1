@@ -52,8 +52,7 @@ class UserServiceImplTest {
     @Mock
     private RoleMappingResource roleMappingResource;
 
-   /* @Mock
-    private RoleScopeResource roleScopeResource;*/
+
 
     @InjectMocks
     private UserServiceImpl userService;
