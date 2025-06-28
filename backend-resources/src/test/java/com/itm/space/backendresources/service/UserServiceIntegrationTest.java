@@ -62,17 +62,17 @@ class UserServiceIntegrationTest extends BaseIntegrationTest {
 
     @AfterEach
     void tearDown() {
-        // Удаляем временного пользователя после каждого теста
+        /
         if (tempUserId != null) {
             keycloak.realm(realm).users().delete(tempUserId);
-            // Не проверяем результат, чтобы не прерывать цепочку тестов в случае ошибок удаления
+
         }
     }
 
     @Test
     @Order(1)
     void createUser_validRequest_userCreated() {
-        // Проверяем, что пользователь успешно создан в setUp()
+
         List<UserRepresentation> users = keycloak.realm(realm).users().search(tempUsername);
         assertFalse(users.isEmpty(), "Пользователь должен существовать после создания");
         UserRepresentation user = users.get(0);
@@ -83,7 +83,7 @@ class UserServiceIntegrationTest extends BaseIntegrationTest {
     @Test
     @Order(2)
     void createUser_duplicateEmail_throwsException() {
-        // Попытка создать пользователя с тем же email должна вызвать исключение
+
         UserRequest duplicateRequest = new UserRequest(
                 "anotheruser_" + UUID.randomUUID().toString().substring(0, 8),
                 tempEmail,

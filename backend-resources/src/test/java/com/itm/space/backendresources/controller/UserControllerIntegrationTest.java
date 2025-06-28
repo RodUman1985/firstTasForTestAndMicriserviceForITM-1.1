@@ -68,7 +68,7 @@ class UserControllerIntegrationTest extends BaseIntegrationTest {
         mvc.perform(requestWithContent(post(BASE_API), request))
                 .andExpect(status().isOk());
 
-        // Найти созданного пользователя в Keycloak для последующего удаления
+
         List<UserRepresentation> users = keycloak.realm(realm).users().search(uniqueUsername);
         UserRepresentation user = users.stream()
                 .filter(u -> uniqueUsername.equals(u.getUsername()))
