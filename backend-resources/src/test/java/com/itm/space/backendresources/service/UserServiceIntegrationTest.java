@@ -2,7 +2,6 @@ package com.itm.space.backendresources.service;
 
 import com.itm.space.backendresources.BaseIntegrationTest;
 import com.itm.space.backendresources.api.request.UserRequest;
-import com.itm.space.backendresources.api.response.UserResponse;
 import com.itm.space.backendresources.exception.BackendResourcesException;
 import org.junit.jupiter.api.*;
 import org.keycloak.admin.client.Keycloak;
@@ -28,7 +27,7 @@ class UserServiceIntegrationTest extends BaseIntegrationTest {
     @Value("${keycloak.realm}")
     private String realm;
 
-    // Данные для временного пользователя
+
     private String tempUsername;
     private String tempEmail;
     private String tempUserId;
@@ -37,8 +36,8 @@ class UserServiceIntegrationTest extends BaseIntegrationTest {
     void setUp() {
         // Генерируем уникальные username и email для временного пользователя
         String unique = UUID.randomUUID().toString().substring(0, 8);
-        tempUsername = "integrationuser_" + unique;
-        tempEmail = "integrationuser_" + unique + "@example.com";
+        tempUsername = "inttestuser_" + unique;
+        tempEmail = "inttestuser_" + unique + "@example.com";
         tempUserId = null;
 
         // Создаем временного пользователя перед каждым тестом
