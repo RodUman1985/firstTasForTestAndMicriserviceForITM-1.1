@@ -90,11 +90,11 @@ class UserControllerIntegrationTest extends BaseIntegrationTest {
     @WithMockUser(roles = "MODERATOR")
     void createUser_withInvalidData_returnsBadRequest() throws Exception {
         UserRequest request = new UserRequest(
-                "", // invalid username
-                "invalid", // invalid email
-                "123", // short password
-                "", // empty first name
-                "" // empty last name
+                "", 
+                "invalid", 
+                "123", 
+                "", 
+                "" 
         );
         mvc.perform(requestWithContent(post(BASE_API), request))
                 .andExpect(status().isBadRequest())
