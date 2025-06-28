@@ -34,13 +34,13 @@ class UserServiceIntegrationTest extends BaseIntegrationTest {
 
     @BeforeEach
     void setUp() {
-        // Генерируем уникальные username и email для временного пользователя
+        
         String unique = UUID.randomUUID().toString().substring(0, 8);
         tempUsername = "inttestuser_" + unique;
         tempEmail = "inttestuser_" + unique + "@example.com";
         tempUserId = null;
 
-        // Создаем временного пользователя перед каждым тестом
+       
         UserRequest request = new UserRequest(
                 tempUsername,
                 tempEmail,
@@ -50,7 +50,7 @@ class UserServiceIntegrationTest extends BaseIntegrationTest {
         );
         assertDoesNotThrow(() -> userService.createUser(request));
 
-        // Получаем id созданного пользователя для последующего удаления
+      
         List<UserRepresentation> users = keycloak.realm(realm).users().search(tempUsername);
         UserRepresentation user = users.stream()
                 .filter(u -> tempUsername.equals(u.getUsername()))
