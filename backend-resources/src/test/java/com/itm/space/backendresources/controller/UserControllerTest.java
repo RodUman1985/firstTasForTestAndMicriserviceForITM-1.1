@@ -2,6 +2,7 @@ package com.itm.space.backendresources.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itm.space.backendresources.BackendResourcesApplication;
+import com.itm.space.backendresources.BaseIntegrationTest;
 import com.itm.space.backendresources.api.request.UserRequest;
 import com.itm.space.backendresources.api.response.UserResponse;
 import com.itm.space.backendresources.service.UserService;
@@ -25,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(classes = BackendResourcesApplication.class)
 @AutoConfigureMockMvc
-class UserControllerTest {
+class UserControllerTest  {
 
     @Autowired
     private MockMvc mockMvc;

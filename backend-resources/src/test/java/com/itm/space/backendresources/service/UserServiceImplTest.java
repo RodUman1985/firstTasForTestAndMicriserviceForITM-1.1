@@ -1,5 +1,6 @@
 package com.itm.space.backendresources.service;
 
+import com.itm.space.backendresources.BaseIntegrationTest;
 import com.itm.space.backendresources.api.request.UserRequest;
 import com.itm.space.backendresources.api.response.UserResponse;
 import com.itm.space.backendresources.exception.BackendResourcesException;
@@ -32,7 +33,7 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
-class UserServiceImplTest {
+class UserServiceImplTest  {
 
     @Mock
     private Keycloak keycloakClient;
