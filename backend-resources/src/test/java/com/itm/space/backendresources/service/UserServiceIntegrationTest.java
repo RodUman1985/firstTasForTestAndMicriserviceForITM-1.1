@@ -62,7 +62,7 @@ class UserServiceIntegrationTest extends BaseIntegrationTest {
 
     @AfterEach
     void tearDown() {
-        /
+
         if (tempUserId != null) {
             keycloak.realm(realm).users().delete(tempUserId);
 
